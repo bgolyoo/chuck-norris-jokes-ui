@@ -13,19 +13,21 @@
         font-family: 'Poiret One', cursive;
         font-size: 2rem;
       }
-      .btn-next-joke {
-        cursor: pointer;
-        background-color: transparent;
-        border: none;
-        outline: none;
-        text-align: left;
-        border-left: 1px solid #868686;
-        color: #383838;
-        transition: all 1s ease;
-        &:hover {
-          border-left: 4px solid #1d1d1d;
-          color: #1d1d1d;
+      .btn-container {
+        .btn-next-joke {
+          cursor: pointer;
+          background-color: transparent;
+          border: none;
+          outline: none;
+          text-align: left;
+          border-left: 1px solid #868686;
+          color: #383838;
           transition: all 1s ease;
+          &:hover {
+            border-left: 4px solid #1d1d1d;
+            color: #1d1d1d;
+            transition: all 1s ease;
+          }
         }
       }
     }
