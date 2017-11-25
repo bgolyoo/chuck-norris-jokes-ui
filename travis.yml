@@ -1,0 +1,25 @@
+language: node_js
+node_js:
+  - "7.5"
+
+branches:
+  only:
+    - master
+
+before_script:
+  - npm install -g @angular/cli
+  - npm install -g angular-cli-ghpages
+  - npm install -g standard-version
+
+script:
+  - ng test --browser ChromeHeadless --single-run
+  - ng-build --prod --aot --base-href "https://bgolyoo.github.io/chuck-norris-jokes-ui/"
+  - standard-version --no-verify
+
+after_success:
+  - angular-cli-ghpages
+
+notifications:
+  email:
+    on_failure: change
+    on_success: change
