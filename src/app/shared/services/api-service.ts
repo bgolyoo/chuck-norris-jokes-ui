@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
+import { JokeResponse } from '../classes/joke-renponse';
 
 @Injectable()
 export class ApiService {
@@ -9,8 +10,8 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  fetchRandomJoke(): Observable<any> {
-    return this.http.get(`${this.baseUrl}/jokes/random`);
+  fetchRandomJoke(): Observable<JokeResponse> {
+    return this.http.get<JokeResponse>(`${this.baseUrl}/jokes/random`);
   }
 
 }
