@@ -7,32 +7,43 @@
     text-align: left;
     font-size: 1rem;
     padding: 55px 50px;
-    color: #92999f;
     .acknowledgement {
       padding-right: 40px;
     }
-    .header {
-      display: block;
-      color: #ffffff;
+    .acknowledgement,
+    .about {
+      color: #92999f;
       font-size: 14px;
-      font-weight: bold;
-      margin-bottom: 20px;
+      font-weight: 400;
+      .header {
+        display: block;
+        color: #ffffff;
+        font-size: 14px;
+        font-weight: 800;
+        margin-bottom: 20px;
+      }
     }
-    .footer-icons {
+    .about .footer-icons {
       margin-top: 25px;
       & a {
         display: inline-block;
         width: 35px;
         height: 35px;
         cursor: pointer;
-        background-color: #33383b;
         border-radius: 2px;
         font-size: 20px;
-        color: #ffffff;
         text-align: center;
         line-height: 35px;
         margin-right: 3px;
         margin-bottom: 5px;
+        color: #b8b8b8;
+        background-color: #33383b;
+        transition: all 1s ease;
+        &:hover {
+          color: #ffffff;
+          background-color: #444b4e;
+          transition: all 1s ease;
+        }
       }
     }
   }
