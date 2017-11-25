@@ -2,8 +2,12 @@ export class Joke {
 
     public id: number;
     public joke: string;
-    public categories: Array<any>;
+    public categories: Array<string>;
 
-    constructor(id: number, joke: string, categories: Array<any>) { }
+    constructor(id: number, joke: string, categories: Array<string>) {
+        this.id = id;
+        this.joke = joke;
+        this.categories = categories;
+     }
 
 }
