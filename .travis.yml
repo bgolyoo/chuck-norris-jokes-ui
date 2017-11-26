@@ -1,6 +1,5 @@
 language: node_js
 node_js: "7.5"
-cache: yarn
 
 branches:
   only:
@@ -15,7 +14,7 @@ script:
   - ng build --prod --aot --base-href "https://bgolyoo.github.io/chuck-norris-jokes-ui/"
 
 after_success:
-  - angular-cli-ghpages
+  - angular-cli-ghpages --no-silent
 
 notifications:
   email:
