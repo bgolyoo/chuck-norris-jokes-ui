@@ -1,6 +1,5 @@
 language: node_js
-node_js:
-  - "7.5"
+node_js: "7.5"
 cache: yarn
 
 branches:
@@ -10,19 +9,10 @@ branches:
 before_script:
   - npm install -g @angular/cli
   - npm install -g angular-cli-ghpages
-  - npm install -g standard-version
 
 script:
   - ng test --browser ChromeHeadless --single-run
   - ng build --prod --aot --base-href "https://bgolyoo.github.io/chuck-norris-jokes-ui/"
-  - git config --global user.email "travis@travis-ci.org"
-  - git config --global user.name "Travis CI"
-  - git remote remove origin
-  - git remote add origin https://${GH_TOKEN}@github.com/bgolyoo/chuck-norris-jokes-ui.git
-  - git checkout master
-  - standard-version --no-verify
-  - git status
-  - git push --follow-tags origin master
 
 after_success:
   - angular-cli-ghpages
