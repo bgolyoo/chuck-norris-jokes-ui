@@ -17,12 +17,10 @@ script:
   - ng build --prod --aot --base-href "https://bgolyoo.github.io/chuck-norris-jokes-ui/"
   - git config --global user.email "travis@travis-ci.org"
   - git config --global user.name "Travis CI"
-  - standard-version --no-verify
-  - echo ${GH_TOKEN}
-  - git remote -v
   - git remote remove origin
   - git remote add origin https://${GH_TOKEN}@github.com/bgolyoo/chuck-norris-jokes-ui.git
-  - git branch
+  - git checkout master
+  - standard-version --no-verify
   - git status
   - git push --follow-tags origin master
 
