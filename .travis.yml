@@ -1,5 +1,6 @@
 language: node_js
 node_js: "7.5"
+cache: yarn
 
 branches:
   only:
@@ -8,6 +9,8 @@ branches:
 before_script:
   - npm install -g @angular/cli
   - npm install -g angular-cli-ghpages
+  - git config --global user.email "travis@travis-ci.org"		
+  - git config --global user.name "Travis CI"
 
 script:
   - ng test --browser ChromeHeadless --single-run
