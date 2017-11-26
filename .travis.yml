@@ -5,8 +5,8 @@ node_js:
 branches:
   only:
     - master
-    - gh-pages
-    - /.*/
+#    - gh-pages
+#    - /.*/
 
 before_script:
   - npm install -g @angular/cli
