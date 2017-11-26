@@ -1,0 +1,11 @@
+<section id="Joke_conatiner">
+  <div class="container">
+    <div class="joke">
+      <p *ngIf="joke" [innerHTML]="joke.joke" class="joke-text"></p>
+      <div class="btn-container">
+        <button type="button" (click)="fetchRandomJoke()" class="btn-next-joke">Hit me with another joke</button>
+      </div>
+    </div>
+    <img src="assets/images/chuck.jpg" alt="chuck" class="chuck-img">
+  </div>
+</section>

@@ -1,0 +1,40 @@
+#Joke_conatiner {
+  .container {
+    display: flex;
+    .joke {
+      padding: 3rem;
+      flex: 1 1 auto;
+      order: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      .joke-text {
+        align-self: flex-start;
+        font-family: 'Poiret One', cursive;
+        font-size: 2rem;
+      }
+      .btn-container {
+        .btn-next-joke {
+          cursor: pointer;
+          background-color: transparent;
+          border: none;
+          outline: none;
+          text-align: left;
+          border-left: 1px solid #868686;
+          color: #383838;
+          transition: all 1s ease;
+          &:hover {
+            border-left: 4px solid #1d1d1d;
+            color: #1d1d1d;
+            transition: all 1s ease;
+          }
+        }
+      }
+    }
+    .chuck-img {
+      height: 100vh;
+      order: 2;
+      align-self: flex-end;
+    }
+  }
+}
