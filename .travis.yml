@@ -10,12 +10,17 @@ before_script:
   - npm install -g @angular/cli
   - npm install -g angular-cli-ghpages
   - npm install -g standard-version
-  - npm install
 
 script:
   - ng test --browser ChromeHeadless --single-run
   - ng build --prod --aot --base-href "https://bgolyoo.github.io/chuck-norris-jokes-ui/"
-  - standard-version --no-verify && git push --follow-tags origin master
+  - git config --global user.email "travis@travis-ci.org"
+  - git config --global user.name "Travis CI"
+  - standard-version --no-verify
+  - git remote add origin https://${GH_TOKEN}@github.com/bgolyoo/chuck-norris-jokes-ui.git
+  - git branch
+  - git status
+  - git push --follow-tags origin master
 
 after_success:
   - angular-cli-ghpages
