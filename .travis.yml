@@ -9,15 +9,13 @@ branches:
 before_script:
   - npm install -g @angular/cli
   - npm install -g angular-cli-ghpages
-  - git config --global user.email "travis@travis-ci.org"		
-  - git config --global user.name "Travis CI"
 
 script:
   - ng test --browser ChromeHeadless --single-run
   - ng build --prod --aot --base-href "https://bgolyoo.github.io/chuck-norris-jokes-ui/"
 
 after_success:
-  - angular-cli-ghpages --no-silent
+  - angular-cli-ghpages --repo=https://${GH_TOKEN}@github.com/organisation/your-repo.git --name="Travis CI" --email=travis@travis-ci.org --no-silent
 
 notifications:
   email:
