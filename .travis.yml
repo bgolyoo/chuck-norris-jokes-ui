@@ -1,28 +1,23 @@
 language: node_js
-node_js:
-  - "7.5"
+node_js: "7.5"
+cache: yarn
 
 branches:
   only:
     - master
-#    - gh-pages
-#    - /.*/
 
 before_script:
   - npm install -g @angular/cli
   - npm install -g angular-cli-ghpages
-  - npm install -g standard-version
-  - npm install
 
 script:
   - ng test --browser ChromeHeadless --single-run
   - ng build --prod --aot --base-href "https://bgolyoo.github.io/chuck-norris-jokes-ui/"
-#  - standard-version --no-verify && git push --follow-tags origin master
 
 after_success:
-  - angular-cli-ghpages
+  - angular-cli-ghpages --repo=https://${GH_TOKEN}@github.com/bgolyoo/chuck-norris-jokes-ui.git --name="Travis CI" --email=travis@travis-ci.org --no-silent
 
 notifications:
   email:
-    on_failure: change
-    on_success: change
+    on_failure: never
+    on_success: never
