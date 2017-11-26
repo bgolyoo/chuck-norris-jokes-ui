@@ -4,6 +4,7 @@ node_js:
 
 branches:
   only:
+    - master
     - gh-pages
     - /.*/
 
@@ -11,11 +12,12 @@ before_script:
   - npm install -g @angular/cli
   - npm install -g angular-cli-ghpages
   - npm install -g standard-version
+  - npm install
 
 script:
   - ng test --browser ChromeHeadless --single-run
-  - ng-build --prod --aot --base-href "https://bgolyoo.github.io/chuck-norris-jokes-ui/"
-  - standard-version --no-verify && git push --follow-tags origin master
+  - ng build --prod --aot --base-href "https://bgolyoo.github.io/chuck-norris-jokes-ui/"
+#  - standard-version --no-verify && git push --follow-tags origin master
 
 after_success:
   - angular-cli-ghpages
