@@ -4,7 +4,6 @@
     .joke {
       padding: 3rem;
       flex: 1 1 auto;
-      order: 1;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -33,8 +32,21 @@
     }
     .chuck-img {
       height: 100vh;
-      order: 2;
       align-self: flex-end;
+    }
+  }
+  @media (max-width: 1080px) {
+    .container {
+      flex-direction: column;
+    }
+    .joke,                                                                                
+    .chuck-img {
+      height: 50vh !important;
+    }
+  }
+  @media (max-width: 650px) {
+    .joke-text {
+      font-size: 1.5rem !important;
     }
   }
 }
