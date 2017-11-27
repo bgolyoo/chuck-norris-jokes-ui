@@ -1,8 +1,10 @@
 # Chuck Norris Jokes Ui
 
+Hosted on: [https://bgolyoo.github.io/chuck-norris-jokes-ui/](https://bgolyoo.github.io/chuck-norris-jokes-ui/)
+
 The jokes are loaded form the awesome API of Chuck Norris jokes.
 
-You can find more information on their webpage: [http://www.icndb.com](http://www.icndb.com/). 
+You can find more information on their webpage: [http://www.icndb.com](http://www.icndb.com/)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.4.
 
