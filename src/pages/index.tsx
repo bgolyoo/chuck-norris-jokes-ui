@@ -35,12 +35,12 @@ export default function Home({ joke: initialJoke }: { joke: Joke }) {
   return (
     <>
       <Meta title={AppConfig.title} description={AppConfig.description} />
-      <main className={inter.className + " bg-gradient-to-br from-cyan-50 to-white"}>
-        <div className="flex text-neutral-800">
+      <main className={inter.className + " flex h-screen bg-gradient-to-br from-cyan-50 to-white"}>
+        <div className="flex-1 flex flex-col justify-between lg:flex-row text-neutral-800">
           <div className="p-12 flex-1 flex flex-col gap-y-4 justify-center">
             {!error ? (
               <>
-                <div className="self-start text-3xl font-medium">{joke.value}</div>
+                <div className="self-start text-2xl xl:text-3xl 2xl:text-4xl font-medium">{joke.value}</div>
                 <div>
                   <button
                     type="button"
@@ -59,7 +59,7 @@ export default function Home({ joke: initialJoke }: { joke: Joke }) {
           <img
             src={`${router.basePath}/images/chuck.png`}
             alt="chuck"
-            className="h-screen self-end pt-28 select-none"
+            className="h-[50vh] md:h-[60vh] lg:h-[80vh] xl:h-screen self-end xl:pt-28 xl:pl-28 select-none"
           />
         </div>
       </main>
